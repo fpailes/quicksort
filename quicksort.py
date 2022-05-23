@@ -21,7 +21,7 @@ def quicksort(list):
         sub_list_right.append(list[i])
 
   # Call quicksort on the "left" and "right" sub-lists
-  return quicksort(sub_list_left + [pivot_element]) + quicksort(sub_list_right)
+  return quicksort(sub_list_left) +  [pivot_element] + quicksort(sub_list_right)
 
 
 unsorted_list = [3,7,12,24,36,42]
