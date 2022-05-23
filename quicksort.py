@@ -5,24 +5,21 @@ def quicksort(list):
     return list
 
   # select random element to be pivousj
-  pivot_idx = randrange(len(list)-1)
+  pivot_idx = randrange(len(list))
   print(pivot_idx)
   pivot_element = list[pivot_idx]
-
-  # swap random element with last element in sublistay
-  #list[end], list[pivot_idx] = list[pivot_idx], list[end]
-
-  # tracks all elements which should be to left (lesser than) pivot
-  #less_than_pointer = start
+  print("pivot Element: " + str(pivot_element))
   sub_list_left = []
   sub_list_right = []
-  for i in range(0, len(list)-1):
-    # we found an element out of place
+# tracks all elements which should be to left (lesser than) pivot
+  for i in range(0, len(list)):
     if list[i] < pivot_element:
         sub_list_left.append(list[i])
-    elif list[i] >= pivot_element:
+        print("left: " + str(sub_list_left))
+    elif list[i] > pivot_element:
         sub_list_right.append(list[i])
-      #less_than_pointer += 1
+        print("right: " + str(sub_list_right))
+  #sub_list_left.append(pivot_element)
   # Call quicksort on the "left" and "right" sub-lists
   return quicksort(sub_list_left), quicksort(sub_list_right)
 
